@@ -596,13 +596,13 @@ export const toolsData: Tool[] = [
     id: "11",
     name: "AWS",
     description: "Cloud infrastructure & services",
-    icon: "https://cdn.simpleicons.org/amazonwebservices/E87B54",
+    icon: "https://www.svgrepo.com/show/376356/aws.svg",
   },
   {
     id: "12",
     name: "Azure",
     description: "Cloud hosting & enterprise services",
-    icon: "https://cdn.simpleicons.org/microsoftazure/E87B54",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
   },
   {
     id: "13",
@@ -648,9 +648,9 @@ export const toolsData: Tool[] = [
   },
   {
     id: "20",
-    name: "ChatGPT / LLMs",
+    name: "AI / LLMs / RAG",
     description: "AI-powered automation & intelligence",
-    icon: "https://cdn.simpleicons.org/openai/E87B54",
+    icon: "https://www.svgrepo.com/show/352965/ai.svg",
   },
   {
     id: "21",
