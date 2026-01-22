@@ -48,9 +48,9 @@ export const ToolsScreen: React.FC = () => {
         {/* Section Header */}
         <motion.div className="mb-10" variants={fadeInUp}>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            <span className="text-foreground">DESIGN</span>
+            <span className="text-foreground">RECENT</span>
             <br />
-            <span className="text-muted-foreground">THOUGHTS</span>
+            <span className="text-muted-foreground">BLOGS</span>
           </h2>
         </motion.div>
 

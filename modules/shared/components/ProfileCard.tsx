@@ -4,10 +4,22 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { profileData } from "../services/data.service";
-import { DribbbleIcon, TwitterIcon, InstagramIcon, YouTubeIcon, FireIcon } from "./Icons";
+import {
+  DribbbleIcon,
+  TwitterIcon,
+  InstagramIcon,
+  YouTubeIcon,
+  FireIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  GlobeIcon,
+} from "./Icons";
 import { fadeInUp, scaleIn } from "../hooks/useAnimations";
 
 const socialIcons: Record<string, React.FC<{ className?: string; size?: number }>> = {
+  github: GitHubIcon,
+  linkedin: LinkedInIcon,
+  globe: GlobeIcon,
   dribbble: DribbbleIcon,
   twitter: TwitterIcon,
   instagram: InstagramIcon,

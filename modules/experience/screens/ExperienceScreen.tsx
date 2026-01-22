@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { experienceData } from "@/modules/shared/services/data.service";
+import { timelineData } from "@/modules/shared/services/data.service";
 import { ExperienceCard } from "../components/ExperienceCard";
 import { fadeInUp, staggerContainer } from "@/modules/shared/hooks/useAnimations";
 
@@ -18,17 +18,17 @@ export const ExperienceScreen: React.FC = () => {
         {/* Section Header */}
         <motion.div className="mb-10" variants={fadeInUp}>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            <span className="text-foreground">12 YEARS OF</span>
+            <span className="text-foreground">CAREER</span>
             <br />
-            <span className="text-muted-foreground">EXPERIENCE</span>
+            <span className="text-muted-foreground">TIMELINE</span>
           </h2>
         </motion.div>
 
         {/* Experience List */}
         <motion.div variants={staggerContainer}>
-          {experienceData.map((experience, index) => (
+          {timelineData.map((experience, index) => (
             <ExperienceCard
-              key={experience.id}
+              key={`${experience.company}-${experience.year}`}
               experience={experience}
               index={index}
             />

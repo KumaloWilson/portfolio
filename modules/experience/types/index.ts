@@ -1,10 +1,10 @@
-import type { Experience } from "@/modules/shared/types";
+import type { TimelineItem } from "@/modules/shared/types";
 
 export interface ExperienceCardProps {
-  experience: Experience;
+  experience: TimelineItem;
   index: number;
 }
 
 export interface ExperienceListProps {
-  experiences: Experience[];
+  experiences: TimelineItem[];
 }

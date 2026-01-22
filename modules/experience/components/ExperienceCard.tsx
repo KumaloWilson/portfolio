@@ -8,8 +8,7 @@ import { fadeInUp, hoverScale } from "@/modules/shared/hooks/useAnimations";
 
 export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) => {
   return (
-    <motion.a
-      href={experience.link}
+    <motion.div
       className="group block py-6 border-b border-border/30 last:border-b-0"
       variants={fadeInUp}
       whileHover={hoverScale}
@@ -18,9 +17,19 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, inde
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1">
           {/* Company Name */}
-          <h3 className="text-xl md:text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
+              {experience.title}
+            </h3>
+            {experience.type && (
+              <span className="rounded-full border border-border/60 px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                {experience.type}
+              </span>
+            )}
+          </div>
+          <p className="mt-2 text-sm uppercase tracking-[0.2em] text-muted-foreground">
             {experience.company}
-          </h3>
+          </p>
 
           {/* Description */}
           <p className="text-sm md:text-base text-muted-foreground mt-3 leading-relaxed max-w-xl">
@@ -29,7 +38,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, inde
 
           {/* Date Range */}
           <p className="text-sm text-muted-foreground mt-4">
-            {experience.startDate} - {experience.endDate}
+            {experience.year}
           </p>
         </div>
 
@@ -42,6 +51,6 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, inde
           <ArrowUpRightIcon size={24} />
         </motion.div>
       </div>
-    </motion.a>
+    </motion.div>
   );
 };

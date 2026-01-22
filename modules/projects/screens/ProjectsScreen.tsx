@@ -18,9 +18,9 @@ export const ProjectsScreen: React.FC = () => {
         {/* Section Header */}
         <motion.div className="mb-10" variants={fadeInUp}>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            <span className="text-foreground">RECENT</span>
+            <span className="text-foreground">FEATURED OPEN</span>
             <br />
-            <span className="text-muted-foreground">PROJECTS</span>
+            <span className="text-muted-foreground">SOURCE PROJECTS</span>
           </h2>
         </motion.div>
 

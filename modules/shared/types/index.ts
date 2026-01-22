@@ -22,7 +22,23 @@ export interface Project {
   id: string;
   title: string;
   description: string;
+  longDescription?: string;
   image: string;
+  gallery?: string[];
+  technologies?: string[];
+  category?: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+  featured?: boolean;
+  metrics?: {
+    metric1: string;
+    metric2: string;
+    metric3: string;
+    metric4: string;
+  };
+  timeline?: string;
+  client?: string;
+  year?: string;
   link?: string;
 }
 
@@ -33,6 +49,27 @@ export interface Experience {
   startDate: string;
   endDate: string;
   link?: string;
+}
+
+export interface Achievement {
+  icon: unknown;
+  title: string;
+  year: string;
+}
+
+export interface TimelineItem {
+  year: string;
+  title: string;
+  company: string;
+  type?: string;
+  description: string;
+}
+
+export interface PersonalStat {
+  icon: unknown;
+  label: string;
+  value: string;
+  color: string;
 }
 
 export interface Tool {
