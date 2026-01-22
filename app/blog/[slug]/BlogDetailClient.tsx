@@ -53,7 +53,7 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
           animate="visible"
           variants={staggerContainer}
         >
-          <motion.aside className="flex justify-center lg:justify-start" variants={fadeInUp}>
+          <motion.aside className="hidden lg:block" variants={fadeInUp}>
             <div className="lg:sticky lg:top-24 h-fit">
               <ProfileCard />
             </div>

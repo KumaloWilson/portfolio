@@ -29,15 +29,15 @@ const socialIcons: Record<string, React.FC<{ className?: string; size?: number }
 export const ProfileCard: React.FC = () => {
   return (
     <motion.div
-      className="sticky top-8 w-full max-w-[300px] lg:max-w-[350px]"
+      className="lg:sticky lg:top-24 w-full max-w-sm mx-auto lg:max-w-[350px]"
       initial="hidden"
       animate="visible"
       variants={fadeInUp}
     >
-      <div className="relative bg-card rounded-2xl p-6 shadow-xl">
+      <div className="relative bg-card rounded-2xl p-6 shadow-xl border border-border/40">
         {/* Decorative dashed curve */}
         <svg
-          className="absolute -left-4 -top-4 w-24 h-32 text-primary"
+          className="absolute -left-4 -top-4 w-24 h-32 text-primary opacity-50 lg:opacity-100"
           viewBox="0 0 100 130"
           fill="none"
         >
@@ -52,7 +52,7 @@ export const ProfileCard: React.FC = () => {
 
         {/* Profile Image */}
         <motion.div
-          className="relative mb-6"
+          className="relative mb-6 mx-auto max-w-[240px] lg:max-w-none"
           variants={scaleIn}
         >
           <div className="relative w-full aspect-[4/5] bg-[#E87B54] rounded-lg overflow-hidden">

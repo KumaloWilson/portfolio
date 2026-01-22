@@ -7,7 +7,7 @@ import { fadeInUp, staggerContainer } from "@/modules/shared/hooks/useAnimations
 
 export const ContactScreen: React.FC = () => {
   return (
-    <section id="contact" className="py-20 scroll-mt-20">
+    <section className="py-20">
       <motion.div
         initial="hidden"
         whileInView="visible"

@@ -14,12 +14,15 @@ export const HeroSection: React.FC = () => {
       variants={staggerContainer}
     >
       <motion.div variants={fadeInUp}>
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-          <span className="text-primary block text-2xl md:text-3xl mb-2 uppercase tracking-widest">{profileData.name}</span>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-2 lg:mt-0">
+          <span className="text-primary block text-xl sm:text-2xl md:text-3xl mb-2 uppercase tracking-widest">{profileData.name}</span>
           <span className="text-foreground">SOFTWARE</span>
           <br />
           <span className="text-muted-foreground">ENGINEER</span>
         </h1>
+        <span className="mt-4 inline-flex w-fit items-center rounded-full border border-border/60 bg-secondary/60 px-4 py-1 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+          Flutter Doctor
+        </span>
       </motion.div>
 
       <motion.p

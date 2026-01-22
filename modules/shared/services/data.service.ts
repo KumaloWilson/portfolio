@@ -14,9 +14,9 @@ import type {
 
 export const profileData: Profile = {
   name: "Wilson Kumalo",
-  title: "Full Stack Software Engineer - Flutter Developer - AI & Digital Health Systems Builder",
+  title: "Full Stack Software Engineer - Flutter Doctor - AI & Digital Health Systems Builder",
   description:
-    "I design and build scalable, secure, and impactful software systems - from mobile apps and web platforms to AI-powered and digital health solutions. Passionate about solving real-world problems through technology.",
+    "I design and build scalable, secure, and impactful software systems - from mobile apps and web platforms to AI-powered and digital health solutions. Also known as the Flutter Doctor. Passionate about solving real-world problems through technology.",
   image: "/dp.jpg",
   socialLinks: [
     { name: "GitHub", url: "https://github.com/KumaloWilson", icon: "github" },

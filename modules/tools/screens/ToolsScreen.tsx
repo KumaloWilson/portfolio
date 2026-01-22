@@ -10,7 +10,7 @@ import { fadeInUp, staggerContainer } from "@/modules/shared/hooks/useAnimations
 
 export const ToolsScreen: React.FC = () => {
   return (
-    <section id="tools" className="py-20 scroll-mt-20">
+    <section className="py-20">
       {/* Premium Tools Section */}
       <motion.div
         initial="hidden"

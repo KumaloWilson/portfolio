@@ -23,7 +23,11 @@ function SectionObserver({
   children: React.ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { amount: 0.3 });
+  // Using a smaller amount and a larger rootMargin (via margin) to trigger earlier on mobile
+  const isInView = useInView(ref, { 
+    amount: 0.1,
+    margin: "-15% 0px -15% 0px" 
+  });
   const setActiveSection = useNavigationStore((state) => state.setActiveSection);
 
   useEffect(() => {
@@ -32,7 +36,11 @@ function SectionObserver({
     }
   }, [isInView, id, setActiveSection]);
 
-  return <div ref={ref}>{children}</div>;
+  return (
+    <div id={id} ref={ref} className="scroll-mt-24">
+      {children}
+    </div>
+  );
 }
 
 function PortfolioContent() {
@@ -42,13 +50,11 @@ function PortfolioContent() {
       <Navigation />
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-24 pb-24 md:pb-12">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
           {/* Left Sidebar - Profile Card (Fixed on desktop) */}
-          <aside className="lg:w-[350px] flex-shrink-0">
-            <div className="lg:sticky lg:top-24">
-              <ProfileCard />
-            </div>
+          <aside className="lg:w-[380px] flex-shrink-0">
+            <ProfileCard />
           </aside>
 
           {/* Right Content - Scrollable Sections */}

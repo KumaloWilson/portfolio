@@ -49,19 +49,19 @@ export const Navigation: React.FC = () => {
 
   return (
     <motion.nav
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50"
-      initial={{ y: -100, opacity: 0 }}
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 md:top-6 md:bottom-auto"
+      initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="flex items-center gap-2 bg-secondary/80 backdrop-blur-md rounded-full px-4 py-3 border border-border">
+      <div className="flex items-center gap-1 md:gap-2 bg-secondary/80 backdrop-blur-md rounded-full px-3 py-2 md:px-4 md:py-3 border border-border shadow-2xl">
         {navItems.map((item) => {
           const isActive = activeSection === item.id;
           return (
             <motion.button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className={`relative p-2 rounded-full transition-colors ${
+              className={`relative p-2 md:p-2.5 rounded-full transition-colors ${
                 isActive
                   ? "text-foreground"
                   : "text-muted-foreground hover:text-foreground"
@@ -77,7 +77,8 @@ export const Navigation: React.FC = () => {
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
-              <item.icon size={20} className="relative z-10" />
+              <item.icon size={18} className="relative z-10 md:hidden" />
+              <item.icon size={20} className="relative z-10 hidden md:block" />
             </motion.button>
           );
         })}
