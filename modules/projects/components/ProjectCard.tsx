@@ -37,7 +37,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       >
         <Image
           src={project.image || "/placeholder.svg"}
-          alt={project.title}
+          alt={`${project.title} - ${project.description}`}
           fill
           className="object-cover"
         />

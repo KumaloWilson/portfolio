@@ -713,6 +713,7 @@ export const blogPostsData: BlogPost[] = [
     readTime: "7 min read",
     image: "/images/blog-systems.jpg",
     slug: "building-scalable-systems",
+    tags: ["Scalability", "Full Stack", "Backend", "System Design"],
   },
   {
     id: "2",
@@ -723,6 +724,7 @@ export const blogPostsData: BlogPost[] = [
     readTime: "6 min read",
     image: "/images/blog-flutter.jpg",
     slug: "flutter-in-production",
+    tags: ["Flutter", "Mobile Development", "GetX", "Architecture"],
   },
   {
     id: "3",
@@ -733,6 +735,7 @@ export const blogPostsData: BlogPost[] = [
     readTime: "8 min read",
     image: "/images/blog-health.jpg",
     slug: "digital-health-africa",
+    tags: ["Digital Health", "Software Development", "Africa", "Healthcare Tech"],
   },
 ];
 

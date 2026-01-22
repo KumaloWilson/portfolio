@@ -58,7 +58,7 @@ export const ProfileCard: React.FC = () => {
           <div className="relative w-full aspect-[4/5] bg-[#E87B54] rounded-lg overflow-hidden">
             <Image
               src={profileData.image || "/placeholder.svg"}
-              alt={profileData.name}
+              alt={`Profile picture of ${profileData.name} - ${profileData.title}`}
               fill
               className="object-cover object-top"
               priority

@@ -87,6 +87,7 @@ export interface BlogPost {
   readTime: string;
   image?: string;
   slug: string;
+  tags?: string[];
 }
 
 export interface SkillCard {

@@ -74,7 +74,7 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
                 <div className="relative h-[240px] w-full md:h-[320px]">
                   <Image
                     src={post.image || "/placeholder.svg"}
-                    alt={post.title}
+                    alt={`${post.title} - ${post.excerpt}`}
                     fill
                     className="object-cover"
                     priority

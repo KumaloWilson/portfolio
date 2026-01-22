@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/modules/shared/hooks/useAnimations";
+import { profileData } from "@/modules/shared/services/data.service";
 
 export const HeroSection: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ export const HeroSection: React.FC = () => {
     >
       <motion.div variants={fadeInUp}>
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+          <span className="text-primary block text-2xl md:text-3xl mb-2 uppercase tracking-widest">{profileData.name}</span>
           <span className="text-foreground">SOFTWARE</span>
           <br />
           <span className="text-muted-foreground">ENGINEER</span>
