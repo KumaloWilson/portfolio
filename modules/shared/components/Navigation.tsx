@@ -1,14 +1,16 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { useNavigationStore } from "../state/navigation.state.tsx";
+import { useNavigationStore } from "../state/navigation.state";
 import type { Section } from "../types";
 import {
   HomeIcon,
   ProjectsIcon,
   ExperienceIcon,
   ToolsIcon,
+  BlogsIcon,
   ContactIcon,
 } from "./Icons";
 
@@ -23,17 +25,25 @@ const navItems: NavItem[] = [
   { id: "projects", icon: ProjectsIcon, label: "Projects" },
   { id: "experience", icon: ExperienceIcon, label: "Experience" },
   { id: "tools", icon: ToolsIcon, label: "Tools" },
+  { id: "blogs", icon: BlogsIcon, label: "Blogs" },
   { id: "contact", icon: ContactIcon, label: "Contact" },
 ];
 
 export const Navigation: React.FC = () => {
   const { activeSection, setActiveSection } = useNavigationStore();
+  const router = useRouter();
 
   const handleNavClick = (sectionId: Section) => {
     setActiveSection(sectionId);
+    if (sectionId === "blogs") {
+      router.push("/blogs");
+      return;
+    }
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push(`/#${sectionId}`);
     }
   };
 

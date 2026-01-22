@@ -532,7 +532,7 @@ export const timelineData: TimelineItem[] = [
 ];
 
 export const toolsData: Tool[] = [
-  { id: "1", name: "Flutter", description: "Cross-platform mobile app development", icon: "flutter" },
+  { id: "1", name: "Flutter", description: "Cross-platform mobile app development", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
   { id: "2", name: "Next.js", description: "Full stack React framework", icon: "nextjs" },
   { id: "3", name: "React", description: "Modern frontend UI development", icon: "react" },
   { id: "4", name: "Node.js", description: "Backend services & REST/GraphQL APIs", icon: "nodejs" },

@@ -104,4 +104,4 @@ export interface ContactForm {
   message: string;
 }
 
-export type Section = 'home' | 'projects' | 'experience' | 'tools' | 'contact';
+export type Section = 'home' | 'projects' | 'experience' | 'tools' | 'blogs' | 'contact';

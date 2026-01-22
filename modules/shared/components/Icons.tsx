@@ -166,6 +166,26 @@ export const ToolsIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
   </svg>
 );
 
+export const BlogsIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M5 3h11a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z" />
+    <path d="M7 7h7" />
+    <path d="M7 11h9" />
+    <path d="M7 15h6" />
+    <path d="M18 7h1a2 2 0 012 2v10a2 2 0 01-2 2h-1" />
+  </svg>
+);
+
 export const ContactIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
   <svg
     className={className}

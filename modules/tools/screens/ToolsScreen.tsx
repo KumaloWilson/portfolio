@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { toolsData, blogPostsData } from "@/modules/shared/services/data.service";
 import { ToolCard } from "../components/ToolCard";
@@ -46,12 +47,21 @@ export const ToolsScreen: React.FC = () => {
         variants={staggerContainer}
       >
         {/* Section Header */}
-        <motion.div className="mb-10" variants={fadeInUp}>
+        <motion.div
+          className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
+          variants={fadeInUp}
+        >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
             <span className="text-foreground">RECENT</span>
             <br />
             <span className="text-muted-foreground">BLOGS</span>
           </h2>
+          <Link
+            href="/blogs"
+            className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition hover:-translate-y-0.5 hover:shadow-primary/40"
+          >
+            More Blogs
+          </Link>
         </motion.div>
 
         {/* Blog Posts */}

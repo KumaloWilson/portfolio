@@ -24,6 +24,7 @@ const iconMap: Record<string, React.FC<{ className?: string; size?: number }>> =
 
 export const ToolCard: React.FC<ToolCardProps> = ({ tool, index }) => {
   const IconComponent = iconMap[tool.icon];
+  const isCdnIcon = /^https?:\/\//.test(tool.icon);
 
   return (
     <motion.div
@@ -34,7 +35,16 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool, index }) => {
     >
       {/* Icon */}
       <div className="w-12 h-12 rounded-lg bg-background flex items-center justify-center flex-shrink-0">
-        {IconComponent && <IconComponent size={24} className="text-card-foreground" />}
+        {isCdnIcon ? (
+          <img
+            src={tool.icon}
+            alt={`${tool.name} icon`}
+            className="h-6 w-6"
+            loading="lazy"
+          />
+        ) : (
+          IconComponent && <IconComponent size={24} className="text-card-foreground" />
+        )}
       </div>
 
       {/* Info */}
