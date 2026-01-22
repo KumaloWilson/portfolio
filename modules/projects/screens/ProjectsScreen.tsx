@@ -8,7 +8,7 @@ import { fadeInUp, staggerContainer } from "@/modules/shared/hooks/useAnimations
 
 export const ProjectsScreen: React.FC = () => {
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-20 scroll-mt-20">
       <motion.div
         initial="hidden"
         whileInView="visible"

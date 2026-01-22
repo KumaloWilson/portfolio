@@ -8,7 +8,7 @@ import { AchievementsSection } from "../components/AchievementsSection";
 
 export const HomeScreen: React.FC = () => {
   return (
-    <section id="home" className="min-h-screen py-8">
+    <section id="home" className="min-h-screen py-8 scroll-mt-20">
       <div className="space-y-12">
         <HeroSection />
         <StatsSection />

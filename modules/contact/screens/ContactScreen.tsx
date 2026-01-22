@@ -7,7 +7,7 @@ import { fadeInUp, staggerContainer } from "@/modules/shared/hooks/useAnimations
 
 export const ContactScreen: React.FC = () => {
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-20 scroll-mt-20">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -32,14 +32,18 @@ export const ContactScreen: React.FC = () => {
           variants={fadeInUp}
         >
           <p className="text-muted-foreground text-sm">
-            Made by{" "}
-            <a href="#" className="text-primary hover:underline">
-              Templyo
-            </a>{" "}
-            | Powered by{" "}
-            <a href="#" className="text-primary hover:underline">
-              Framer
+            Made with love by Wilson Kumalo. Inspired by{" "}
+            <a
+              href="https://framer.com/projects/Sawad-copy--ITQ5UqtcH31fxBoZ6k9Q-8Ott3?duplicate=NRkfQQbzViP80JUxAfHy&node=augiA20Il"
+              className="text-primary hover:underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Sawad
             </a>
+          </p>
+          <p className="mt-2 text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Wilson Kumalo. All rights reserved.
           </p>
         </motion.footer>
       </motion.div>
