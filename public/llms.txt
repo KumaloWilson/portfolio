@@ -1,0 +1,45 @@
+# Wilson Kumalo - Full Stack Software Engineer
+
+Wilson Kumalo is a Full Stack Software Engineer, Flutter Developer, and AI & Digital Health Systems Builder. He specializes in designing and building scalable, secure, and impactful software systems ranging from mobile apps and web platforms to AI-powered and digital health solutions.
+
+## Professional Summary
+- **Role**: Full Stack Software Engineer
+- **Specialties**: Mobile Apps (Flutter), Web Platforms, Backend Systems, AI-powered Solutions, Digital Health Systems.
+- **Mission**: Solving real-world problems through technology with a focus on scalability and security.
+
+## Key Projects
+
+### FlySpotter Pro
+An AI-powered mobile app for real-time fly species identification and tracking.
+- **Stack**: Flutter, Firebase, TensorFlow Lite, Google Maps API.
+- **Status**: Prototype with 90% model accuracy.
+
+### CUT Portal WhatsApp Bot
+A scalable WhatsApp chatbot providing university students access to portal information.
+- **Stack**: Node.js, Express.js, WhatsApp Business API.
+- **Impact**: Automates student services via a clean architecture approach.
+
+### ZINWA Water Meter System
+A prepaid water meter management solution featuring account management and real-time monitoring.
+- **Stack**: Express.js, TypeScript, PostgreSQL, Next.js, Flutter, IoT, Docker.
+- **Features**: Paynow integration, JWT-based multi-role auth.
+
+### LearnSmart AI Platform
+Monorepo education platform with AI-powered features for personalized learning.
+- **Stack**: Next.js, React, Redux, Node.js, Express, Sequelize, OpenAI API, Supabase.
+
+### Smart Driver Companion
+AI-enhanced Flutter app for driver behavior monitoring and community alerts.
+- **Stack**: Flutter, Firebase, Google Maps, Python Flask.
+
+## Core Expertise
+- **Languages**: Dart, Java, TypeScript, JavaScript, PHP, Python, SQL.
+- **Frameworks**: Flutter, Next.js, React, Express.js, Flask, Node.js.
+- **Databases/Tools**: PostgreSQL, Redis, Supabase, Firebase, Docker, Git.
+- **Specialized Fields**: AI/ML Integration (TensorFlow Lite, OpenAI), IoT, Digital Health, Web3/Geospatial.
+
+## Links
+- **Website**: https://wilsonkumalo.dev
+- **GitHub**: https://github.com/KumaloWilson
+- **LinkedIn**: https://www.linkedin.com/in/wilson-kumalo-733550243/
+- **Blog**: https://wilsonkumalo.dev/blogs
