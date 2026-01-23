@@ -55,6 +55,136 @@ export const LinkedInIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
   </svg>
 );
 
+export const FacebookIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path d="M22 12a10 10 0 10-11.5 9.95v-7.04H7.9V12h2.6V9.8c0-2.57 1.53-3.98 3.88-3.98 1.12 0 2.29.2 2.29.2v2.52h-1.29c-1.27 0-1.67.79-1.67 1.6V12h2.84l-.45 2.91h-2.39v7.04A10 10 0 0022 12z" />
+  </svg>
+);
+
+export const WhatsAppIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path d="M12.04 2C6.55 2 2.08 6.47 2.08 11.96c0 1.93.5 3.72 1.37 5.29L2 22l4.9-1.39a9.9 9.9 0 005.15 1.42h.01c5.49 0 9.96-4.47 9.96-9.96C22.02 6.48 17.55 2 12.04 2zm5.77 14.05c-.24.67-1.2 1.23-1.86 1.36-.45.08-1.03.12-2.99-.63-2.5-.97-4.1-3.42-4.22-3.58-.12-.16-1.01-1.35-1.01-2.58 0-1.23.64-1.83.86-2.08.22-.26.49-.32.66-.32.17 0 .34 0 .49.01.16.01.38-.06.59.45.24.58.8 2.02.87 2.17.07.15.12.35.02.56-.1.21-.15.35-.3.54-.15.2-.32.43-.46.58-.15.15-.3.31-.13.61.17.3.75 1.24 1.62 2.01 1.12 1 2.07 1.32 2.37 1.47.3.15.48.13.66-.08.18-.2.76-.88.96-1.18.2-.3.4-.25.66-.15.26.1 1.67.79 1.96.94.29.14.48.22.55.35.07.13.07.74-.17 1.41z" />
+  </svg>
+);
+
+export const TelegramIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+  </svg>
+);
+
+export const RedditIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2zm3.843 11.232c-.378 0-.69.13-.93.353-.872-.596-2.062-.977-3.376-1.03l.698-3.138 2.27.48c.026.544.475.98 1.026.98.568 0 1.03-.462 1.03-1.03s-.462-1.03-1.03-1.03c-.41 0-.763.242-.924.59l-2.527-.534c-.11-.024-.22.03-.275.132l-.78 3.513c-1.34.027-2.557.41-3.45.99-.236-.21-.535-.333-.863-.333-.706 0-1.28.574-1.28 1.28 0 .43.212.81.536 1.043-.016.11-.024.22-.024.332 0 1.66 2.114 3.012 4.712 3.012 2.6 0 4.713-1.352 4.713-3.012 0-.104-.007-.205-.02-.307.34-.23.565-.618.565-1.06 0-.706-.575-1.28-1.282-1.28zm-5.418 1.144c.54 0 .977.438.977.977 0 .54-.438.978-.977.978s-.978-.438-.978-.978c0-.54.438-.977.978-.977zm5.545 2.112c-.503.504-1.428.756-2.433.756-1.002 0-1.93-.252-2.432-.756-.113-.113-.113-.298 0-.41.112-.114.297-.114.41 0 .385.385 1.146.57 2.02.57.876 0 1.637-.185 2.022-.57.112-.114.298-.114.41 0 .113.112.113.297 0 .41zm-.513-1.135c-.54 0-.977-.438-.977-.977s.438-.978.977-.978.977.438.977.978-.438.977-.977.977z" />
+  </svg>
+);
+
+export const PinterestIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.965 1.406-5.965s-.359-.718-.359-1.78c0-1.667.967-2.913 2.171-2.913 1.023 0 1.517.769 1.517 1.69 0 1.03-.655 2.57-.992 3.992-.283 1.194.598 2.169 1.777 2.169 2.132 0 3.771-2.249 3.771-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.261 7.929-7.261 4.162 0 7.398 2.967 7.398 6.93 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.621 0 12-5.378 12-12S18.638 0 12.017 0z" />
+  </svg>
+);
+
+export const MailIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="2" y="4" width="20" height="16" rx="2" />
+    <path d="M22 6l-10 7L2 6" />
+  </svg>
+);
+
+export const ShareIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="18" cy="5" r="3" />
+    <circle cx="6" cy="12" r="3" />
+    <circle cx="18" cy="19" r="3" />
+    <path d="M8.7 10.7l6.6-3.4" />
+    <path d="M8.7 13.3l6.6 3.4" />
+  </svg>
+);
+
+export const CopyIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="9" y="9" width="13" height="13" rx="2" />
+    <rect x="3" y="3" width="13" height="13" rx="2" />
+  </svg>
+);
+
+export const CheckIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
+
 export const GlobeIcon: React.FC<IconProps> = ({ className, size = 24 }) => (
   <svg
     className={className}
