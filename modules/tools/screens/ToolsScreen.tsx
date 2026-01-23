@@ -8,6 +8,7 @@ import { getBlogs } from "@/lib/api/blogs";
 import { ToolCard } from "../components/ToolCard";
 import type { BlogPost } from "@/modules/shared/types";
 import { BlogCard } from "../components/BlogCard";
+import { BlogCardSkeleton } from "../components/BlogCardSkeleton";
 import { fadeInUp, staggerContainer } from "@/modules/shared/hooks/useAnimations";
 
 export const ToolsScreen: React.FC = () => {
@@ -90,16 +91,34 @@ export const ToolsScreen: React.FC = () => {
 
         {/* Blog Posts */}
         {isLoading && (
-          <p className="text-sm text-muted-foreground">Loading recent posts...</p>
+          <div className="space-y-4" aria-busy="true" aria-live="polite">
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              Fetching recent stories
+            </p>
+            <div className="grid gap-4">
+              {Array.from({ length: 3 }).map((_, index) => (
+                <BlogCardSkeleton key={`blog-skeleton-${index}`} />
+              ))}
+            </div>
+          </div>
         )}
         {!isLoading && posts.length === 0 && (
-          <p className="text-sm text-muted-foreground">No blog posts yet.</p>
+          <div className="rounded-3xl border border-border/50 bg-secondary/40 p-8 text-sm text-muted-foreground">
+            No blog posts yet. Check back soon or follow along on socials.
+          </div>
         )}
-        <motion.div variants={staggerContainer}>
-          {posts.map((post, index) => (
-            <BlogCard key={post.id} post={post} index={index} />
-          ))}
-        </motion.div>
+        {!isLoading && posts.length > 0 && (
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            key={`blogs-loaded-${posts.length}`}
+          >
+            {posts.map((post, index) => (
+              <BlogCard key={post.id} post={post} index={index} />
+            ))}
+          </motion.div>
+        )}
       </motion.div>
     </section>
   );

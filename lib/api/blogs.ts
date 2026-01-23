@@ -15,6 +15,7 @@ interface BlogListItem {
   slug: string;
   excerpt?: string;
   featuredImage?: string;
+  headlineImage?: string;
   status: string;
   publishedAt?: string;
   tags?: string[];
@@ -53,12 +54,17 @@ const toBlogPost = (item: BlogListItem | BlogDetail): BlogPost => {
     date: formatBlogDate(dateSource),
     readTime,
     image: item.featuredImage,
+    headlineImage: "headlineImage" in item ? item.headlineImage : undefined,
     slug: item.slug,
     tags: item.tags,
     content: "content" in item ? item.content : undefined,
     metaTitle: "metaTitle" in item ? item.metaTitle : undefined,
     metaDescription: "metaDescription" in item ? item.metaDescription : undefined,
     publishedAt: item.publishedAt || item.createdAt,
+    authorName: item.author
+      ? `${item.author.firstName} ${item.author.lastName}`.trim()
+      : undefined,
+    viewCount: item.viewCount,
   };
 };
 

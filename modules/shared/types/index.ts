@@ -86,12 +86,15 @@ export interface BlogPost {
   date: string;
   readTime: string;
   image?: string;
+  headlineImage?: string;
   slug: string;
   tags?: string[];
   content?: string;
   metaTitle?: string;
   metaDescription?: string;
   publishedAt?: string;
+  authorName?: string;
+  viewCount?: number;
 }
 
 export interface SkillCard {
