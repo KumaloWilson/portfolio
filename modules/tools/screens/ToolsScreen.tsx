@@ -1,14 +1,38 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { toolsData, blogPostsData } from "@/modules/shared/services/data.service";
+import { toolsData } from "@/modules/shared/services/data.service";
+import { getBlogs } from "@/lib/api/blogs";
 import { ToolCard } from "../components/ToolCard";
+import type { BlogPost } from "@/modules/shared/types";
 import { BlogCard } from "../components/BlogCard";
 import { fadeInUp, staggerContainer } from "@/modules/shared/hooks/useAnimations";
 
 export const ToolsScreen: React.FC = () => {
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    getBlogs({ limit: 3 })
+      .then((data) => {
+        if (isMounted) setPosts(data);
+      })
+      .catch(() => {
+        // Silent fail to avoid breaking the homepage
+      })
+      .finally(() => {
+        if (isMounted) setIsLoading(false);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <section className="py-20">
       {/* Premium Tools Section */}
@@ -65,8 +89,14 @@ export const ToolsScreen: React.FC = () => {
         </motion.div>
 
         {/* Blog Posts */}
+        {isLoading && (
+          <p className="text-sm text-muted-foreground">Loading recent posts...</p>
+        )}
+        {!isLoading && posts.length === 0 && (
+          <p className="text-sm text-muted-foreground">No blog posts yet.</p>
+        )}
         <motion.div variants={staggerContainer}>
-          {blogPostsData.map((post, index) => (
+          {posts.map((post, index) => (
             <BlogCard key={post.id} post={post} index={index} />
           ))}
         </motion.div>

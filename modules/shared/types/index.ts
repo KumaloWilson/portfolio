@@ -88,6 +88,10 @@ export interface BlogPost {
   image?: string;
   slug: string;
   tags?: string[];
+  content?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  publishedAt?: string;
 }
 
 export interface SkillCard {
@@ -101,6 +105,7 @@ export interface SkillCard {
 export interface ContactForm {
   name: string;
   email: string;
+  service: string;
   budget: string;
   message: string;
 }

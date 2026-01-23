@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
-import { blogPostsData } from "@/modules/shared/services/data.service";
+import { getBlogs } from "@/lib/api/blogs";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = ["", "/blogs"].map((path) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: new Date().toISOString(),
@@ -10,9 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "" ? 1 : 0.7,
   }));
 
-  const blogRoutes = blogPostsData.map((post) => ({
+  const posts = await getBlogs({ limit: 200 }).catch(() => []);
+
+  const blogRoutes = posts.map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
-    lastModified: new Date().toISOString(),
+    lastModified: post.publishedAt || new Date().toISOString(),
     changeFrequency: "yearly" as const,
     priority: 0.6,
   }));

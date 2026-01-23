@@ -33,6 +33,10 @@ interface BlogDetailClientProps {
 const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
   const { setActiveSection } = useNavigationStore();
 
+  const contentParagraphs = post.content
+    ? post.content.split(/\n\s*\n/).filter(Boolean)
+    : [];
+
   useEffect(() => {
     setActiveSection("blogs");
   }, [setActiveSection]);
@@ -97,16 +101,28 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
             </motion.div>
 
             <motion.div className="space-y-10" variants={staggerContainer}>
-              {bodySections.map((section) => (
-                <motion.div key={section.title} className="space-y-4" variants={fadeInUp}>
-                  <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
-                    {section.title}
-                  </h2>
-                  <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                    {section.copy}
-                  </p>
-                </motion.div>
-              ))}
+              {contentParagraphs.length > 0 ? (
+                contentParagraphs.map((paragraph, index) => (
+                  <motion.p
+                    key={`${post.id}-${index}`}
+                    className="text-sm leading-relaxed text-muted-foreground md:text-base"
+                    variants={fadeInUp}
+                  >
+                    {paragraph}
+                  </motion.p>
+                ))
+              ) : (
+                bodySections.map((section) => (
+                  <motion.div key={section.title} className="space-y-4" variants={fadeInUp}>
+                    <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
+                      {section.title}
+                    </h2>
+                    <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
+                      {section.copy}
+                    </p>
+                  </motion.div>
+                ))
+              )}
 
               <motion.div
                 className="rounded-3xl border border-border/60 bg-secondary/40 p-8"

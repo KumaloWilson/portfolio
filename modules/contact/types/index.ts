@@ -4,6 +4,7 @@ export interface ContactFormState extends ContactForm {
   isSubmitting: boolean;
   isSuccess: boolean;
   error: string | null;
+  fieldErrors: Partial<Record<keyof ContactForm, string>>;
 }
 
 export interface ContactFormProps {

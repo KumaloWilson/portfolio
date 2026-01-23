@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useEffect } from "react";
+import type { BlogPost } from "@/modules/shared/types";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { blogPostsData } from "@/modules/shared/services/data.service";
 import { BlogCard } from "@/modules/tools/components/BlogCard";
 import { fadeInUp, staggerContainer } from "@/modules/shared/hooks/useAnimations";
 import { Navigation, NavigationProvider, useNavigationStore } from "@/modules/shared";
 
-const BlogsPageContent = () => {
-  const featuredPost = blogPostsData[0];
+const BlogsPageContent = ({ posts }: { posts: BlogPost[] }) => {
+  const featuredPost = posts[0];
   const { setActiveSection } = useNavigationStore();
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const BlogsPageContent = () => {
                 Total Posts
               </p>
               <p className="mt-2 text-3xl font-semibold text-foreground">
-                {blogPostsData.length}
+                {posts.length}
               </p>
             </div>
             <div className="rounded-2xl border border-border/50 bg-secondary/30 p-5">
@@ -100,8 +100,17 @@ const BlogsPageContent = () => {
             </motion.div>
           )}
 
+
+          {posts.length === 0 && (
+            <motion.div
+              className="mt-12 rounded-3xl border border-border/50 bg-secondary/40 p-8 text-center text-sm text-muted-foreground"
+              variants={fadeInUp}
+            >
+              No blog posts yet. Check back soon.
+            </motion.div>
+          )}
           <motion.div className="mt-12" variants={staggerContainer}>
-            {blogPostsData.map((post, index) => (
+            {posts.map((post, index) => (
               <BlogCard key={post.id} post={post} index={index} />
             ))}
           </motion.div>
@@ -111,10 +120,10 @@ const BlogsPageContent = () => {
   );
 };
 
-export function BlogsPageClient() {
+export function BlogsPageClient({ posts }: { posts: BlogPost[] }) {
   return (
     <NavigationProvider>
-      <BlogsPageContent />
+      <BlogsPageContent posts={posts} />
     </NavigationProvider>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
+import { getBlogs } from "@/lib/api/blogs";
 import { BlogsPageClient } from "./BlogsPageClient";
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogsPage() {
-  return <BlogsPageClient />;
+export default async function BlogsPage() {
+  const posts = await getBlogs({ limit: 50 }).catch(() => []);
+  return <BlogsPageClient posts={posts} />;
 }

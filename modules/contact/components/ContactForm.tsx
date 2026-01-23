@@ -6,6 +6,19 @@ import { useContactForm } from "../hooks/useContactForm";
 import { budgetOptions } from "@/modules/shared/services/data.service";
 import { fadeInUp, staggerContainer } from "@/modules/shared/hooks/useAnimations";
 import { ChevronDownIcon } from "@/modules/shared/components/Icons";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+
+const serviceOptions = [
+  { value: "", label: "Select a service..." },
+  { value: "web-app", label: "Web App" },
+  { value: "mobile-app", label: "Mobile App" },
+  { value: "api-backend", label: "API / Backend" },
+  { value: "ui-ux", label: "UI/UX Design" },
+  { value: "ai-ml", label: "AI / ML" },
+  { value: "devops", label: "DevOps / Deployment" },
+  { value: "consulting", label: "Consulting" },
+  { value: "other", label: "Other" },
+];
 
 export const ContactForm: React.FC = () => {
   const { formState, updateField, handleSubmit } = useContactForm();
@@ -19,6 +32,22 @@ export const ContactForm: React.FC = () => {
       viewport={{ once: true, margin: "-100px" }}
       variants={staggerContainer}
     >
+      {formState.error && (
+        <Alert variant="destructive" className="border-destructive/50">
+          <AlertTitle>Submission failed</AlertTitle>
+          <AlertDescription>{formState.error}</AlertDescription>
+        </Alert>
+      )}
+
+      {formState.isSuccess && (
+        <Alert className="border-emerald-400/50 bg-emerald-50 text-emerald-900">
+          <AlertTitle>Message sent</AlertTitle>
+          <AlertDescription>
+            Thanks for reaching out. I’ll get back to you soon.
+          </AlertDescription>
+        </Alert>
+      )}
+
       {/* Name and Email Row */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <motion.div variants={fadeInUp}>
@@ -32,6 +61,11 @@ export const ContactForm: React.FC = () => {
             onChange={(e) => updateField("name", e.target.value)}
             className="w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
           />
+          {formState.fieldErrors.name && (
+            <p className="mt-2 text-xs text-destructive">
+              {formState.fieldErrors.name}
+            </p>
+          )}
         </motion.div>
 
         <motion.div variants={fadeInUp}>
@@ -45,8 +79,42 @@ export const ContactForm: React.FC = () => {
             onChange={(e) => updateField("email", e.target.value)}
             className="w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
           />
+          {formState.fieldErrors.email && (
+            <p className="mt-2 text-xs text-destructive">
+              {formState.fieldErrors.email}
+            </p>
+          )}
         </motion.div>
       </div>
+
+      {/* Service */}
+      <motion.div variants={fadeInUp}>
+        <label className="block text-sm text-muted-foreground mb-2">
+          Service
+        </label>
+        <div className="relative">
+          <select
+            value={formState.service}
+            onChange={(e) => updateField("service", e.target.value)}
+            className="w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground appearance-none focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all cursor-pointer"
+          >
+            {serviceOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+          <ChevronDownIcon
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none"
+            size={20}
+          />
+        </div>
+        {formState.fieldErrors.service && (
+          <p className="mt-2 text-xs text-destructive">
+            {formState.fieldErrors.service}
+          </p>
+        )}
+      </motion.div>
 
       {/* Budget Select */}
       <motion.div variants={fadeInUp}>
@@ -70,6 +138,11 @@ export const ContactForm: React.FC = () => {
             size={20}
           />
         </div>
+        {formState.fieldErrors.budget && (
+          <p className="mt-2 text-xs text-destructive">
+            {formState.fieldErrors.budget}
+          </p>
+        )}
       </motion.div>
 
       {/* Message Textarea */}
@@ -84,29 +157,16 @@ export const ContactForm: React.FC = () => {
           rows={5}
           className="w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
         />
+        <div className="mt-2 flex items-center justify-between text-xs text-muted-foreground">
+          <span>
+            {formState.fieldErrors.message || "Minimum 10 characters."}
+          </span>
+          <span>{formState.message.length}/5000</span>
+        </div>
       </motion.div>
 
       {/* Error Message */}
-      {formState.error && (
-        <motion.p
-          className="text-destructive text-sm"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          {formState.error}
-        </motion.p>
-      )}
-
-      {/* Success Message */}
-      {formState.isSuccess && (
-        <motion.p
-          className="text-green-500 text-sm"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          Thank you! Your message has been sent successfully.
-        </motion.p>
-      )}
+      {/* Status handled by Alert above */}
 
       {/* Submit Button */}
       <motion.button

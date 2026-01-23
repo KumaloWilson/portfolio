@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { blogPostsData } from "@/modules/shared/services/data.service";
-import type { BlogPost } from "@/modules/shared/types";
+import { getBlogBySlug } from "@/lib/api/blogs";
 import { BlogDetailClient } from "./BlogDetailClient";
 import { siteConfig } from "@/lib/site";
 
@@ -11,7 +10,7 @@ interface BlogDetailPageProps {
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const { slug } = await params;
-  const post = blogPostsData.find((item) => item.slug === slug) as BlogPost | undefined;
+  const post = await getBlogBySlug(slug);
 
   if (!post) {
     notFound();
@@ -19,14 +18,16 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
   const canonicalUrl = `${siteConfig.url}/blog/${post.slug}`;
   const imageUrl = post.image || siteConfig.ogImage;
+  const metaTitle = post.metaTitle || post.title;
+  const metaDescription = post.metaDescription || post.excerpt;
 
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": post.title,
-    "description": post.excerpt,
+    "headline": metaTitle,
+    "description": metaDescription,
     "image": imageUrl,
-    "datePublished": post.date,
+    "datePublished": post.publishedAt || post.date,
     "author": {
       "@type": "Person",
       "name": siteConfig.name,
@@ -88,7 +89,7 @@ export async function generateMetadata(
   { params }: BlogDetailPageProps
 ): Promise<Metadata> {
   const { slug } = await params;
-  const post = blogPostsData.find((item) => item.slug === slug) as BlogPost | undefined;
+  const post = await getBlogBySlug(slug);
 
   if (!post) {
     return {
@@ -102,10 +103,12 @@ export async function generateMetadata(
 
   const canonicalUrl = `${siteConfig.url}/blog/${post.slug}`;
   const imageUrl = post.image || siteConfig.ogImage;
+  const metaTitle = post.metaTitle || post.title;
+  const metaDescription = post.metaDescription || post.excerpt;
 
   return {
-    title: post.title,
-    description: post.excerpt,
+    title: metaTitle,
+    description: metaDescription,
     keywords: post.tags,
     alternates: {
       canonical: canonicalUrl,
@@ -113,9 +116,9 @@ export async function generateMetadata(
     openGraph: {
       type: "article",
       url: canonicalUrl,
-      title: post.title,
-      description: post.excerpt,
-      publishedTime: post.date,
+      title: metaTitle,
+      description: metaDescription,
+      publishedTime: post.publishedAt || undefined,
       authors: [siteConfig.name],
       tags: post.tags,
       images: [
@@ -129,8 +132,8 @@ export async function generateMetadata(
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
+      title: metaTitle,
+      description: metaDescription,
       images: [imageUrl],
     },
   };
