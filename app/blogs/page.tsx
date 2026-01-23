@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Insights, articles, and deep dives on software engineering, product, and design.",
     images: [
       {
-        url: siteConfig.ogImage,
+        url: "/og-blogs.png",
         width: 1200,
         height: 630,
         alt: `${siteConfig.name} blogs`,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `Blogs | ${siteConfig.name}`,
     description: "Insights, articles, and deep dives on software engineering, product, and design.",
-    images: [siteConfig.ogImage],
+    images: ["/og-blogs.png"],
   },
 };
 

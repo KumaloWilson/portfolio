@@ -7,7 +7,7 @@ export const siteConfig = {
   name: profileData.name,
   title: `${profileData.name} | Flutter Doctor & Software Engineer`,
   description: profileData.description,
-  ogImage: "/logo/logo.jpg",
+  ogImage: "/og-home.png",
   keywords: [
     "software engineer",
     "full stack developer",

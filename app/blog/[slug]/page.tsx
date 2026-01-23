@@ -17,7 +17,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   }
 
   const canonicalUrl = `${siteConfig.url}/blog/${post.slug}`;
-  const imageUrl = post.image || siteConfig.ogImage;
+  const imageUrl = post.headlineImage || post.image || siteConfig.ogImage;
   const metaTitle = post.metaTitle || post.title;
   const metaDescription = post.metaDescription || post.excerpt;
 
@@ -102,7 +102,7 @@ export async function generateMetadata(
   }
 
   const canonicalUrl = `${siteConfig.url}/blog/${post.slug}`;
-  const imageUrl = post.image || siteConfig.ogImage;
+  const imageUrl = post.headlineImage || post.image || siteConfig.ogImage;
   const metaTitle = post.metaTitle || post.title;
   const metaDescription = post.metaDescription || post.excerpt;
 
