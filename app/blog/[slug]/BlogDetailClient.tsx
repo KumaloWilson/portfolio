@@ -9,6 +9,7 @@ import { fadeInUp, staggerContainer } from "@/modules/shared/hooks/useAnimations
 import type { BlogPost } from "@/modules/shared/types";
 import { siteConfig } from "@/lib/site";
 import {
+  ArrowRightIcon,
   CheckIcon,
   CopyIcon,
   FacebookIcon,
@@ -194,14 +195,15 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
             </div>
           </motion.aside>
 
-          <motion.div className="space-y-8 md:space-y-10" variants={staggerContainer}>
-            <div className="flex items-center justify-between gap-4">
+          <motion.div className="space-y-8 md:space-y-10 min-w-0" variants={staggerContainer}>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <motion.div variants={fadeInUp}>
                 <Link
                   href="/blogs"
-                  className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  <span className="mr-2">←</span> Back to all blogs
+                  <ArrowRightIcon className="h-4 w-4 rotate-180" />
+                  Back to all blogs
                 </Link>
               </motion.div>
 
@@ -216,7 +218,7 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
                   Share
                 </button>
                 {shareMenuOpen && (
-                  <div className="absolute right-0 top-12 z-20 w-64 rounded-2xl border border-border/60 bg-background/95 p-2 shadow-xl backdrop-blur animate-in fade-in zoom-in duration-200">
+                  <div className="absolute left-0 top-12 z-20 w-72 max-w-[calc(100vw-2.5rem)] rounded-2xl border border-border/60 bg-background/95 p-2 shadow-xl backdrop-blur animate-in fade-in zoom-in duration-200 sm:left-auto sm:right-0">
                     <div className="px-3 py-2 border-b border-border/40 mb-1">
                       <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
                         Share this post
@@ -259,7 +261,7 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
 
             <motion.div className="space-y-6" variants={fadeInUp}>
               <div className="space-y-4">
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground sm:text-xs sm:tracking-[0.2em]">
                   {post.authorName && (
                     <span className="flex items-center gap-2">
                       <span className="h-1 w-1 rounded-full bg-primary/60" />
@@ -318,7 +320,7 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
                 </span>
               </div>
 
-              <h1 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl tracking-tight">
+              <h1 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl tracking-tight break-words">
                 {post.title}
               </h1>
 

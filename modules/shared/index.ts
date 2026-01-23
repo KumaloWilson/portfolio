@@ -13,4 +13,4 @@ export * from "./types";
 export * from "./hooks/useAnimations";
 
 // State
-export { useNavigationStore, NavigationProvider } from "./state/navigation.state.tsx";
+export { useNavigationStore, NavigationProvider } from "./state/navigation.state";
