@@ -109,7 +109,7 @@ export interface ContactForm {
   name: string;
   email: string;
   service: string;
-  budget: string;
+  budget?: string;
   message: string;
 }
 
