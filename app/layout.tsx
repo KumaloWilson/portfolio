@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { Geist, Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 import { profileData } from "@/modules/shared/services/data.service";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -101,6 +102,11 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <Script id="performance-measure-guard" strategy="beforeInteractive">
+          {`(function(){if(typeof performance==="undefined"||typeof performance.measure!=="function"){return;}var original=performance.measure.bind(performance);performance.measure=function(name,startOrOptions,endMark){try{if(typeof startOrOptions==="number"&&startOrOptions<0){return;}if(startOrOptions&&typeof startOrOptions==="object"){var start=startOrOptions.start??startOrOptions.startTime;var end=startOrOptions.end??startOrOptions.endTime;var duration=startOrOptions.duration;if((typeof start==="number"&&start<0)||(typeof end==="number"&&end<0)||(typeof duration==="number"&&duration<0)){return;}}return original(name,startOrOptions,endMark);}catch(_err){return;}};})();`}
+        </Script>
+      </head>
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />

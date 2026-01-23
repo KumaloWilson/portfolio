@@ -741,8 +741,9 @@ export const blogPostsData: BlogPost[] = [
 
 export const budgetOptions = [
   { value: "", label: "Select project budget..." },
+  { value: "100-500", label: "$100 - $500" },
   { value: "500-2000", label: "$500 - $2,000" },
   { value: "2000-5000", label: "$2,000 - $5,000" },
   { value: "5000-10000", label: "$5,000 - $10,000" },
-  { value: "10000+", label: "$10,000+" },
+  { value: "10k+", label: "$10,000+" },
 ];
