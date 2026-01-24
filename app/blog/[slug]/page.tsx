@@ -36,7 +36,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     "headline": metaTitle,
     "description": metaDescription,
     "image": imageUrl,
-    "datePublished": publishedAt || post.date,
+    "datePublished": publishedAt || modifiedAt || undefined,
     "dateModified": modifiedAt || undefined,
     "author": {
       "@type": "Person",
