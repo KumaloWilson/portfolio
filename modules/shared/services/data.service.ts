@@ -427,7 +427,7 @@ export const experienceData: Experience[] = [
       "Leading the technical direction of a multi-portal recruitment ecosystem (Admin, Recruiter, Candidate). Architected the platform's infrastructure, built secure APIs, developed mobile and web applications, and implemented features such as candidate screening, job posting workflows, notifications, and analytics dashboards. Introduced automation and DevOps practices to streamline operations and improve reliability.",
     startDate: "Oct 2025",
     endDate: "Present",
-    link: "#",
+    link: "https://juvakelteam.co.zw/",
   },
   {
     id: "3",
@@ -436,7 +436,7 @@ export const experienceData: Experience[] = [
       "Contributing to the Neotree digital health platform - an evidence-based neonatal EHR and clinical decision-support system. Working on the full stack including web, mobile, and backend services. Implemented new features across modules, built changelog/version-control systems, improved data syncing flows, optimized UI/UX, and collaborated closely with clinicians and global research teams to enhance the platform's impact in frontline hospitals.",
     startDate: "Sept 2025",
     endDate: "Present",
-    link: "#",
+    link: "https://neotree.org/",
   },
   {
     id: "4",
@@ -445,7 +445,7 @@ export const experienceData: Experience[] = [
       "Working on cross-platform web and mobile solutions across multiple domains. Responsible for building scalable backends, modern UIs, and integrating third-party APIs. Led the development of core business platforms and introduced automation for internal workflows.",
     startDate: "April 2025",
     endDate: "Sept 2025",
-    link: "#",
+    link: "https://www.kaysconsulting.com.au/",
   },
   {
     id: "5",
@@ -454,7 +454,7 @@ export const experienceData: Experience[] = [
       "Spearheaded full-stack development initiatives across multiple client projects. Mentored junior developers, enforced code quality standards, and introduced scalable architecture patterns using modern frameworks like Next.js and Flutter.",
     startDate: "Nov 2024",
     endDate: "May 2025",
-    link: "#",
+    link: "https://abstrak.agency/",
   },
   {
     id: "6",
@@ -463,7 +463,7 @@ export const experienceData: Experience[] = [
       "Led the design and development of AI-powered mobile applications using Flutter. Integrated real-time databases, authentication, and push notifications while delivering intuitive user experiences. Focused on performance optimization and rapid prototyping.",
     startDate: "Dec 2023",
     endDate: "Dec 2024",
-    link: "#",
+    link: "https://www.kaributech.co.za/",
   },
   {
     id: "7",
@@ -472,7 +472,7 @@ export const experienceData: Experience[] = [
       "Started my professional journey, learned modern development practices, and contributed to various projects. Worked across the stack and helped shape the company's first client products, building strong foundations in mobile and backend technologies.",
     startDate: "Aug 2022",
     endDate: "Present",
-    link: "#",
+    link: "https://kingsmansoftwares.co.zw/",
   },
 ];
 
