@@ -61,6 +61,7 @@ const toBlogPost = (item: BlogListItem | BlogDetail): BlogPost => {
     metaTitle: "metaTitle" in item ? item.metaTitle : undefined,
     metaDescription: "metaDescription" in item ? item.metaDescription : undefined,
     publishedAt: item.publishedAt || item.createdAt,
+    updatedAt: "updatedAt" in item ? item.updatedAt : undefined,
     authorName: item.author
       ? `${item.author.firstName} ${item.author.lastName}`.trim()
       : undefined,

@@ -1,6 +1,6 @@
 import type { ApiResponse } from "./types";
 
-const DEFAULT_API_URL = "http://localhost:10000/api/v1";
+const DEFAULT_API_URL = "https://api.wilsonkumalo.dev/api/v1";
 
 export const getApiBaseUrl = () => {
   const envUrl = process.env.NEXT_PUBLIC_API_URL;

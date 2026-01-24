@@ -415,7 +415,7 @@ export const experienceData: Experience[] = [
     id: "1",
     company: "Appsistance",
     description:
-      "Building a complete Point-of-Sale (POS) system, including inventory management, product catalogs, receipt generation, offline-first capabilities, and real-time syncing. Responsible for backend API design, database architecture, and frontend/mobile development. Led integrations for payments, authentication, and business reporting while ensuring scalability and smooth user workflows.",
+      "Contributed to the frontend development of all mobile portals and the web application for a complete Point-of-Sale (POS) system, covering inventory management, product catalogs, receipt generation, offline-first capabilities, and real-time syncing. Focused on UI implementation, user flows, and smooth experiences across platforms.",
     startDate: "Oct 2025",
     endDate: "Present",
     link: "#",

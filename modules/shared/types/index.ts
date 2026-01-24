@@ -93,6 +93,7 @@ export interface BlogPost {
   metaTitle?: string;
   metaDescription?: string;
   publishedAt?: string;
+  updatedAt?: string;
   authorName?: string;
   viewCount?: number;
 }

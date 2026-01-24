@@ -8,6 +8,13 @@ interface BlogDetailPageProps {
   params: Promise<{ slug: string }>;
 }
 
+const toAbsoluteUrl = (url?: string) => {
+  if (!url) return undefined;
+  return url.startsWith("http://") || url.startsWith("https://")
+    ? url
+    : `${siteConfig.url}${url.startsWith("/") ? "" : "/"}${url}`;
+};
+
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const { slug } = await params;
   const post = await getBlogBySlug(slug);
@@ -17,9 +24,11 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   }
 
   const canonicalUrl = `${siteConfig.url}/blog/${post.slug}`;
-  const imageUrl = post.headlineImage || post.image || siteConfig.ogImage;
+  const imageUrl = toAbsoluteUrl(post.headlineImage || post.image || siteConfig.ogImage);
   const metaTitle = post.metaTitle || post.title;
-  const metaDescription = post.metaDescription || post.excerpt;
+  const metaDescription = post.metaDescription || post.excerpt || siteConfig.description;
+  const publishedAt = post.publishedAt || undefined;
+  const modifiedAt = post.updatedAt || undefined;
 
   const blogSchema = {
     "@context": "https://schema.org",
@@ -27,7 +36,8 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     "headline": metaTitle,
     "description": metaDescription,
     "image": imageUrl,
-    "datePublished": post.publishedAt || post.date,
+    "datePublished": publishedAt || post.date,
+    "dateModified": modifiedAt || undefined,
     "author": {
       "@type": "Person",
       "name": siteConfig.name,
@@ -102,14 +112,20 @@ export async function generateMetadata(
   }
 
   const canonicalUrl = `${siteConfig.url}/blog/${post.slug}`;
-  const imageUrl = post.headlineImage || post.image || siteConfig.ogImage;
+  const imageUrl = toAbsoluteUrl(post.headlineImage || post.image || siteConfig.ogImage);
   const metaTitle = post.metaTitle || post.title;
-  const metaDescription = post.metaDescription || post.excerpt;
+  const metaDescription = post.metaDescription || post.excerpt || siteConfig.description;
+  const publishedAt = post.publishedAt || undefined;
+  const modifiedAt = post.updatedAt || undefined;
 
   return {
     title: metaTitle,
     description: metaDescription,
     keywords: post.tags,
+    robots: {
+      index: true,
+      follow: true,
+    },
     alternates: {
       canonical: canonicalUrl,
     },
@@ -118,12 +134,13 @@ export async function generateMetadata(
       url: canonicalUrl,
       title: metaTitle,
       description: metaDescription,
-      publishedTime: post.publishedAt || undefined,
+      publishedTime: publishedAt,
+      modifiedTime: modifiedAt,
       authors: [siteConfig.name],
       tags: post.tags,
       images: [
         {
-          url: imageUrl,
+          url: imageUrl || siteConfig.ogImage,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -134,7 +151,7 @@ export async function generateMetadata(
       card: "summary_large_image",
       title: metaTitle,
       description: metaDescription,
-      images: [imageUrl],
+      images: [imageUrl || siteConfig.ogImage],
     },
   };
 }

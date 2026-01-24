@@ -1,6 +1,6 @@
 import { profileData } from "@/modules/shared/services/data.service";
 
-const fallbackUrl = "http://localhost:3000";
+const fallbackUrl = "https://wilsonkumalo.dev";
 
 export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || fallbackUrl,

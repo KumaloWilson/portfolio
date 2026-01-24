@@ -10,11 +10,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: path === "" ? 1 : 0.7,
   }));
 
-  const posts = await getBlogs({ limit: 200 }).catch(() => []);
+  const posts = [];
+  const limit = 100;
+  const maxPages = 20;
+
+  for (let page = 1; page <= maxPages; page += 1) {
+    const pagePosts = await getBlogs({ page, limit }).catch(() => []);
+    if (!pagePosts.length) break;
+    posts.push(...pagePosts);
+    if (pagePosts.length < limit) break;
+  }
 
   const blogRoutes = posts.map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
-    lastModified: post.publishedAt || new Date().toISOString(),
+    lastModified: post.updatedAt || post.publishedAt || new Date().toISOString(),
     changeFrequency: "yearly" as const,
     priority: 0.6,
   }));
