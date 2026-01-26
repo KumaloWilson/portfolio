@@ -25,7 +25,7 @@ import {
 
 const bodySections = [
   {
-    title: "What does a career in web design involve--",
+    title: "What does a career in web design involve?",
     copy:
       "A career in website design can involve the design, creation, and coding of a range of website types. Other tasks will typically include liaising with clients and discussing website specifications, incorporating feedback, working on graphic design and image editing, and enabling multimedia features such as audio and video.",
   },
@@ -35,7 +35,7 @@ const bodySections = [
       "Web developers can focus on the back-end, front-end, or full-stack development, and typically utilize a range of programming languages, libraries, and frameworks to do so. Web designers may work more closely with front-end engineers to establish the user-end functionality and appearance of a site.",
   },
   {
-    title: "Are web designers in demand--",
+    title: "Are web designers in demand?",
     copy:
       "In our ever-increasingly digital environment, there is a constant need for websites. Web designers with significant coding experience are typically in higher demand and can usually expect a higher salary. Like all jobs, there are likely to be a range of opportunities, some of which are better paid than others.",
   },
@@ -53,14 +53,14 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
 
   const hasHtmlContent = Boolean(post.content && post.content.includes("<"));
   const contentParagraphs = !hasHtmlContent && post.content
-    -- post.content.split(/\n\s*\n/).filter(Boolean)
+    ? post.content.split(/\n\s*\n/).filter(Boolean)
     : [];
   const canonicalUrl = useMemo(
     () => `${siteConfig.url}/blog/${post.slug}`,
     [post.slug]
   );
   const shareText = useMemo(
-    () => `${post.title} -- ${post.excerpt || ""} ${canonicalUrl}`.trim(),
+    () => `${post.title} - ${post.excerpt || ""} ${canonicalUrl}`.trim(),
     [post.title, post.excerpt, canonicalUrl]
   );
   const shareUrl = canonicalUrl;
@@ -70,7 +70,7 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
     () => [
       {
         label: "LinkedIn",
-        href: `https://www.linkedin.com/shareArticle--mini=true&url=${encodeURIComponent(
+        href: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
           shareUrl
         )}&title=${encodeURIComponent(post.title)}&summary=${encodeURIComponent(
           shareDescription
@@ -84,7 +84,7 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
       },
       {
         label: "Facebook",
-        href: `https://www.facebook.com/sharer/sharer.php--u=${encodeURIComponent(shareUrl)}`,
+        href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
         icon: FacebookIcon,
       },
       {
@@ -94,21 +94,21 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
       },
       {
         label: "Telegram",
-        href: `https://t.me/share/url--url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(
+        href: `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(
           post.title
         )}`,
         icon: TelegramIcon,
       },
       {
         label: "Reddit",
-        href: `https://reddit.com/submit--url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(
+        href: `https://reddit.com/submit?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(
           post.title
         )}`,
         icon: RedditIcon,
       },
       {
         label: "Pinterest",
-        href: `https://pinterest.com/pin/create/button/--url=${encodeURIComponent(
+        href: `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(
           shareUrl
         )}&media=${encodeURIComponent(post.image || "")}&description=${encodeURIComponent(
           post.title
@@ -233,12 +233,12 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
                         onClick={handleCopyLink}
                         className="flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-sm text-foreground transition hover:bg-secondary/60"
                       >
-                        {copied -- (
+                        {copied ? (
                           <CheckIcon className="text-primary" size={16} />
                         ) : (
                           <CopyIcon size={16} />
                         )}
-                        {copied -- "Copied!" : "Copy link"}
+                        {copied ? "Copied!" : "Copy link"}
                       </button>
                       {socialLinks.map(({ label, href, icon: Icon }) => (
                         <Link
@@ -286,7 +286,7 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
                   )}
                 </div>
 
-                {post.tags--.length -- (
+                {post.tags?.length ? (
                   <div className="flex flex-wrap gap-2">
                     {post.tags.map((tag) => (
                       <span
@@ -330,13 +330,13 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
             </motion.div>
 
             <motion.div className="space-y-8 md:space-y-12" variants={staggerContainer}>
-              {hasHtmlContent -- (
+              {hasHtmlContent ? (
                 <motion.div
                   className="blog-html text-base text-muted-foreground md:text-lg leading-relaxed space-y-6"
                   variants={fadeInUp}
                   dangerouslySetInnerHTML={{ __html: post.content as string }}
                 />
-              ) : contentParagraphs.length > 0 -- (
+              ) : contentParagraphs.length > 0 ? (
                 contentParagraphs.map((paragraph, index) => (
                   <motion.p
                     key={`${post.id}-${index}`}
@@ -374,7 +374,7 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
                 <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-primary/10 blur-3xl transition-all group-hover:bg-primary/20" />
                 
                 <h3 className="text-2xl font-bold text-foreground md:text-3xl tracking-tight">
-                  Ready to build something bold--
+                  Ready to build something bold?
                 </h3>
                 <p className="mt-4 text-base text-muted-foreground md:text-lg max-w-xl">
                   Let's talk about your next product, platform, or experience. I'm currently available for new projects.
