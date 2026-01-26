@@ -90,13 +90,13 @@ export const getBlogs = async (options: GetBlogsOptions = {}) => {
   if (options.sortOrder) params.set("sortOrder", options.sortOrder);
 
   const data = await apiFetch<BlogListItem[]>(`/blogs?${params.toString()}`, {
-    next: { revalidate: options.revalidate ?? 300 },
+    next: { revalidate: options.revalidate ?? 0 },
   });
 
   return data.map(toBlogPost);
 };
 
-export const getBlogBySlug = async (slug: string, revalidate = 300) => {
+export const getBlogBySlug = async (slug: string, revalidate = 0) => {
   try {
     const data = await apiFetch<BlogDetail>(`/blogs/slug/${slug}`, {
       next: { revalidate },
