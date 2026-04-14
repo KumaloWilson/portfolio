@@ -17,7 +17,7 @@ export const profileData: Profile = {
   title: "Full Stack Software Engineer - Flutter Doctor - AI & Digital Health Systems Builder",
   description:
     "I design and build scalable, secure, and impactful software systems - from mobile apps and web platforms to AI-powered and digital health solutions. Also known as the Flutter Doctor. Passionate about solving real-world problems through technology.",
-  image: "/dp.jpg",
+  image: "/dp.png",
   socialLinks: [
     { name: "GitHub", url: "https://github.com/KumaloWilson", icon: "github" },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/wilson-kumalo-733550243/", icon: "linkedin" },
@@ -410,124 +410,75 @@ export const projectsData: Project[] = [
   },
 ];
 
-export const experienceData: Experience[] = [
-  {
-    id: "1",
-    company: "Appsistance",
-    description:
-      "Contributed to the frontend development of all mobile portals and the web application for a complete Point-of-Sale (POS) system, covering inventory management, product catalogs, receipt generation, offline-first capabilities, and real-time syncing. Focused on UI implementation, user flows, and smooth experiences across platforms.",
-    startDate: "Oct 2025",
-    endDate: "Present",
-    link: "#",
-  },
-  {
-    id: "2",
-    company: "Juvakel Team Recruiters",
-    description:
-      "Leading the technical direction of a multi-portal recruitment ecosystem (Admin, Recruiter, Candidate). Architected the platform's infrastructure, built secure APIs, developed mobile and web applications, and implemented features such as candidate screening, job posting workflows, notifications, and analytics dashboards. Introduced automation and DevOps practices to streamline operations and improve reliability.",
-    startDate: "Oct 2025",
-    endDate: "Present",
-    link: "https://juvakelteam.co.zw/",
-  },
-  {
-    id: "3",
-    company: "BRTI (Neotree Project)",
-    description:
-      "Contributing to the Neotree digital health platform - an evidence-based neonatal EHR and clinical decision-support system. Working on the full stack including web, mobile, and backend services. Implemented new features across modules, built changelog/version-control systems, improved data syncing flows, optimized UI/UX, and collaborated closely with clinicians and global research teams to enhance the platform's impact in frontline hospitals.",
-    startDate: "Sept 2025",
-    endDate: "Present",
-    link: "https://neotree.org/",
-  },
-  {
-    id: "4",
-    company: "Kays Consulting Services",
-    description:
-      "Working on cross-platform web and mobile solutions across multiple domains. Responsible for building scalable backends, modern UIs, and integrating third-party APIs. Led the development of core business platforms and introduced automation for internal workflows.",
-    startDate: "April 2025",
-    endDate: "Sept 2025",
-    link: "https://www.kaysconsulting.com.au/",
-  },
-  {
-    id: "5",
-    company: "Abstrak Agency",
-    description:
-      "Spearheaded full-stack development initiatives across multiple client projects. Mentored junior developers, enforced code quality standards, and introduced scalable architecture patterns using modern frameworks like Next.js and Flutter.",
-    startDate: "Nov 2024",
-    endDate: "May 2025",
-    link: "https://abstrak.agency/",
-  },
-  {
-    id: "6",
-    company: "KaribuTech AI",
-    description:
-      "Led the design and development of AI-powered mobile applications using Flutter. Integrated real-time databases, authentication, and push notifications while delivering intuitive user experiences. Focused on performance optimization and rapid prototyping.",
-    startDate: "Dec 2023",
-    endDate: "Dec 2024",
-    link: "https://www.kaributech.co.za/",
-  },
-  {
-    id: "7",
-    company: "Kingsman Software Services",
-    description:
-      "Started my professional journey, learned modern development practices, and contributed to various projects. Worked across the stack and helped shape the company's first client products, building strong foundations in mobile and backend technologies.",
-    startDate: "Aug 2022",
-    endDate: "Present",
-    link: "https://kingsmansoftwares.co.zw/",
-  },
-];
 
 export const timelineData: TimelineItem[] = [
+
+  {
+    year: "Apr 2026 - Present",
+    title: "Software Developer",
+    company: "Organization for Public Health Interventions (Neotree Project)",
+    type: "Full Time",
+    description:
+      "Contributing to the Neotree digital health platform, an evidence-based neonatal EHR and clinical decision-support system used in frontline hospitals. Working across the full stack (web, mobile, and backend), delivering scalable features across multiple modules. Designed and implemented changelog and version-control systems, improved offline-first data synchronization flows, and optimized UI/UX for clinical usability. Built and maintained data pipelines integrating with external health systems (Impilo EHR and DHIS2), enabling secure and structured data exchange for reporting and interoperability. Collaborating closely with clinicians, researchers, and international teams to support real-world neonatal care and decision-making.",
+  },
+
   {
     year: "Oct 2025 - Present",
+    title: "Software Engineer & Technical Lead",
+    company: "Juvakel Team Recruiters",
+    type: "Part-Time",
+    description:
+      "Leading the technical direction of a multi-portal recruitment ecosystem (Admin, Recruiter, Candidate). Architected system infrastructure, developed secure and scalable APIs, and built mobile and web applications. Implemented features such as candidate screening workflows, job management, notifications, and analytics dashboards. Introduced automation and DevOps practices to improve system reliability, deployment efficiency, and overall product scalability.",
+  },
+
+  {
+    year: "Oct 2025 - Jan 2026",
     title: "Full Stack Software Developer",
     company: "Appsistance",
     type: "Part-Time",
     description:
-      "Contributed to the frontend development of all mobile portals and the web application for a complete Point-of-Sale (POS) system, covering inventory management, product catalogs, receipt generation, offline-first capabilities, and real-time syncing. Focused on UI implementation, user flows, and smooth experiences across platforms.",
+      "Contributed to the frontend development of mobile portals and the web application for a comprehensive POS system. Implemented features including inventory management, product catalogs, receipt generation, and offline-first capabilities with real-time synchronization. Focused on intuitive UI design, efficient user flows, and seamless cross-platform user experiences.",
   },
+
   {
-    year: "Oct 2025 - Present",
-    title: "CTO & Technical Lead.",
-    company: "Juvakel Team Recruiters",
-    type: "Part-Time",
-    description:
-      "Leading the technical direction of a multi-portal recruitment ecosystem (Admin, Recruiter, Candidate). Architected the platform's infrastructure, built secure APIs, developed mobile and web applications, and implemented features such as candidate screening, job posting workflows, notifications, and analytics dashboards. Introduced automation and DevOps practices to streamline operations and improve reliability.",
-  },
-  {
-    year: "Sept 2025 - Present",
+    year: "Sept 2025 - Mar 2026",
     title: "Full Stack Developer",
-    company: "BRTI (Neotree Project)",
+    company: "Biomedical Research and Training Institute (Neotree Project)",
     type: "Full Time",
     description:
-      "Contributing to the Neotree digital health platform - an evidence-based neonatal EHR and clinical decision-support system. Working on the full stack including web, mobile, and backend services. Implemented new features across modules, built changelog/version-control systems, improved data syncing flows, optimized UI/UX, and collaborated closely with clinicians and global research teams to enhance the platform's impact in frontline hospitals.",
+      "Played a key role in developing the Neotree digital health platform, supporting neonatal care in frontline hospitals. Delivered full-stack features across web, mobile, and backend systems. Contributed to system architecture improvements, enhanced data synchronization performance, and supported integrations with external health systems including Impilo EHR and DHIS2. Worked closely with multidisciplinary teams to align technical solutions with clinical workflows.",
   },
+
   {
-    year: "April 2025 - Aug 2025",
+    year: "Apr 2025 - Aug 2025",
     title: "Full Stack Developer",
     company: "Kays Consulting Services",
     description:
-      "Working on cross-platform web and mobile solutions across multiple domains. Responsible for building scalable backends, modern UIs, and integrating third-party APIs. Led the development of core business platforms and introduced automation for internal workflows.",
+      "Developed cross-platform web and mobile solutions across multiple domains. Built scalable backend systems, modern frontend interfaces, and integrated third-party APIs. Led development of core business platforms and introduced automation to streamline internal workflows and improve operational efficiency.",
   },
+
   {
     year: "Nov 2024 - May 2025",
     title: "Lead Software Engineer",
     company: "Abstrak Agency",
     description:
-      "Spearheaded full-stack development initiatives across multiple client projects. Mentored junior developers, enforced code quality standards, and introduced scalable architecture patterns using modern frameworks like Next.js and Flutter.",
+      "Led full-stack development across multiple client projects. Mentored junior developers, enforced code quality standards, and implemented scalable architecture patterns using modern technologies such as Next.js and Flutter. Improved development workflows and delivery consistency across teams.",
   },
+
   {
     year: "Dec 2023 - Dec 2024",
     title: "Lead Mobile App Developer",
     company: "KaribuTech AI",
     description:
-      "Led the design and development of AI-powered mobile applications using Flutter. Integrated real-time databases, authentication, and push notifications while delivering intuitive user experiences. Focused on performance optimization and rapid prototyping.",
+      "Led the design and development of AI-powered mobile applications using Flutter. Integrated real-time databases, authentication systems, and push notifications. Focused on performance optimization, rapid prototyping, and delivering intuitive, user-centered mobile experiences.",
   },
+
   {
     year: "Aug 2022 - Present",
-    title: "Software Developer",
+    title: "Software Engineer",
     company: "Kingsman Software Services",
     description:
-      "Started my professional journey, learned modern development practices, and contributed to various projects. Worked across the stack and helped shape the company's first client products, building strong foundations in mobile and backend technologies.",
+      "Founded and contributed to software development projects across multiple domains, building strong foundations in mobile and backend technologies. Delivered client solutions, shaped early product architecture, and continuously expanded expertise across the full technology stack.",
   },
 ];
 
