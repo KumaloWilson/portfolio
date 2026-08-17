@@ -62,6 +62,7 @@ export interface TimelineItem {
   title: string;
   company: string;
   type?: string;
+  category?: "Professional experience" | "Consulting & technical leadership" | "Ventures";
   description: string;
 }
 

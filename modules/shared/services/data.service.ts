@@ -1,8 +1,7 @@
-import { Award, Calendar, Code, Coffee, Heart, Users } from "lucide-react";
+import { Award, BriefcaseBusiness, GraduationCap, HeartPulse, Layers3, WifiOff } from "lucide-react";
 import type {
   Achievement,
   BlogPost,
-  Experience,
   PersonalStat,
   Profile,
   Project,
@@ -14,36 +13,36 @@ import type {
 
 export const profileData: Profile = {
   name: "Wilson Kumalo",
-  title: "Full Stack Software Engineer - Flutter Doctor - AI & Digital Health Systems Builder",
+  title: "Software & Systems Engineer",
   description:
-    "I design and build scalable, secure, and impactful software systems - from mobile apps and web platforms to AI-powered and digital health solutions. Also known as the Flutter Doctor. Passionate about solving real-world problems through technology.",
-  image: "/dp.png",
+    "I build dependable mobile, web and backend systems for healthcare, education and low-connectivity environments.",
+  image: "/dp-portrait.jpg",
   socialLinks: [
     { name: "GitHub", url: "https://github.com/KumaloWilson", icon: "github" },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/wilson-kumalo-733550243/", icon: "linkedin" },
-    { name: "Twitter / X", url: "https://x.com/", icon: "twitter" },
     { name: "Website", url: "https://wilsonkumalo.dev", icon: "globe" }
   ],
 };
 
 export const statsData: Stat[] = [
-  { value: "3+", label: "YEARS OF", sublabel: "PROFESSIONAL EXPERIENCE" },
-  { value: "20+", label: "PROJECTS", sublabel: "DELIVERED" },
-  { value: "5+", label: "ACTIVE", sublabel: "PRODUCTION SYSTEMS" },
+  { value: "4+", label: "YEARS OF", sublabel: "PROFESSIONAL ENGINEERING" },
+  { value: "3", label: "PRODUCT LAYERS", sublabel: "MOBILE, WEB & BACKEND" },
+  { value: "2", label: "CORE DOMAINS", sublabel: "HEALTHTECH & EDTECH" },
 ];
 
 export const personalStatsData: PersonalStat[] = [
-  { icon: Coffee, label: "Cups of Coffee", value: "20+", color: "text-amber-600" },
-  { icon: Code, label: "Lines of Code", value: "1M+", color: "text-blue-600" },
-  { icon: Users, label: "Happy Clients", value: "20+", color: "text-green-600" },
-  { icon: Calendar, label: "Years Experience", value: "3+", color: "text-purple-600" },
+  { icon: BriefcaseBusiness, label: "Professional experience", value: "4+ years", color: "text-primary" },
+  { icon: GraduationCap, label: "BSc (Hons) IT", value: "First Class", color: "text-primary" },
+  { icon: Layers3, label: "Production delivery", value: "Full stack", color: "text-primary" },
+  { icon: WifiOff, label: "Specialisation", value: "Offline-first", color: "text-primary" },
 ];
 
 export const achievementsData: Achievement[] = [
-  { icon: Code, title: "Certified AR-VR Mobile Developer", year: "2025" },
-  { icon: Award, title: "Certified Full Stack Developer", year: "2024" },
-  { icon: Users, title: "Team Lead Experience", year: "2023" },
-  { icon: Heart, title: "Open Source Contributor", year: "2023" },
+  { icon: GraduationCap, title: "First Class BSc (Hons) in Information Technology", year: "2025" },
+  { icon: Award, title: "Vice Chancellor’s Award", year: "2025" },
+  { icon: Award, title: "University Book Prize", year: "2024" },
+  { icon: Award, title: "University Book Prize", year: "2023" },
+  { icon: HeartPulse, title: "Digital health & EHR integration experience", year: "Current" },
 ];
 
 export const skillCardsData: SkillCard[] = [
@@ -145,11 +144,11 @@ export const projectsData: Project[] = [
   },
   {
     id: "4",
-    title: "ZINWA Water Meter System",
+    title: "Prepaid Water Management Prototype",
     description:
-      "A prepaid water meter management solution for ZINWA with account management, token purchases, and real-time monitoring.",
+      "A personal concept exploring prepaid water accounts, token purchases and usage monitoring.",
     longDescription:
-      "The ZINWA Water Meter System is a comprehensive platform combining an Express.js backend API with a Flutter mobile app. It empowers customers to manage their water accounts, purchase prepaid tokens, monitor usage, and receive alerts. The backend handles authentication, payments via Paynow, real-time meter reading, analytics, and administrative functions, while the mobile app offers an intuitive user experience with offline support, biometric login, and multi-language support.",
+      "This personal prototype combines an Express.js backend API with a Flutter mobile app to explore prepaid water accounts, token purchases, usage monitoring and alerts. It was not an official commissioned product.",
     image: "/images/projects/zinwa.jpg",
     gallery: [
       "/zinwa_water_meter_system_screen1.svg",
@@ -178,10 +177,10 @@ export const projectsData: Project[] = [
       metric1: "Supports prepaid water token generation and purchase",
       metric2: "Integrated with Paynow Zimbabwe for payments",
       metric3: "JWT-based multi-role authentication system",
-      metric4: "Deployed with Docker for scalable production environments",
+      metric4: "Containerised deployment setup",
     },
-    timeline: "7 months (MVP & Deployment)",
-    client: "Zimbabwe National Water Authority (ZINWA)",
+    timeline: "Personal prototype",
+    client: "Concept project — not officially commissioned",
     year: "2025",
     link: "https://github.com/kumalowilson/zinwa_water_meters",
   },
@@ -412,73 +411,83 @@ export const projectsData: Project[] = [
 
 
 export const timelineData: TimelineItem[] = [
-
   {
-    year: "Apr 2026 - Present",
-    title: "Software Developer",
-    company: "Organization for Public Health Interventions (Neotree Project)",
-    type: "Full Time",
+    year: "Sep 2025 – Present",
+    title: "Software Developer — Neotree Project",
+    company: "OPHID: Apr 2026–Present · BRTI: Sep 2025–Mar 2026",
+    type: "Full-time",
+    category: "Professional experience",
     description:
-      "Contributing to the Neotree digital health platform, an evidence-based neonatal EHR and clinical decision-support system used in frontline hospitals. Working across the full stack (web, mobile, and backend), delivering scalable features across multiple modules. Designed and implemented changelog and version-control systems, improved offline-first data synchronization flows, and optimized UI/UX for clinical usability. Built and maintained data pipelines integrating with external health systems (Impilo EHR and DHIS2), enabling secure and structured data exchange for reporting and interoperability. Collaborating closely with clinicians, researchers, and international teams to support real-world neonatal care and decision-making.",
+      "Builds across mobile, web and backend services for a neonatal EHR and clinical decision-support platform. Work includes offline-first synchronisation, clinical usability, release and update tooling, and structured integrations with Impilo and DHIS2.",
   },
-
   {
     year: "Oct 2025 - Present",
     title: "Software Engineer & Technical Lead",
     company: "Juvakel Team Recruiters",
-    type: "Part-Time",
+    type: "Part-time",
+    category: "Consulting & technical leadership",
     description:
-      "Leading the technical direction of a multi-portal recruitment ecosystem (Admin, Recruiter, Candidate). Architected system infrastructure, developed secure and scalable APIs, and built mobile and web applications. Implemented features such as candidate screening workflows, job management, notifications, and analytics dashboards. Introduced automation and DevOps practices to improve system reliability, deployment efficiency, and overall product scalability.",
+      "Leads technical direction for a multi-portal recruitment platform spanning admin, recruiter and candidate experiences, secure APIs, screening workflows, notifications, analytics and delivery automation.",
   },
-
   {
     year: "Oct 2025 - Jan 2026",
-    title: "Full Stack Software Developer",
+    title: "Software Developer",
     company: "Appsistance",
-    type: "Part-Time",
+    type: "Part-time",
+    category: "Professional experience",
     description:
-      "Contributed to the frontend development of mobile portals and the web application for a comprehensive POS system. Implemented features including inventory management, product catalogs, receipt generation, and offline-first capabilities with real-time synchronization. Focused on intuitive UI design, efficient user flows, and seamless cross-platform user experiences.",
+      "Contributed to mobile and web experiences for a POS platform, including inventory, catalogue, receipt and offline synchronisation workflows.",
   },
-
   {
-    year: "Sept 2025 - Mar 2026",
-    title: "Full Stack Developer",
-    company: "Biomedical Research and Training Institute (Neotree Project)",
-    type: "Full Time",
-    description:
-      "Played a key role in developing the Neotree digital health platform, supporting neonatal care in frontline hospitals. Delivered full-stack features across web, mobile, and backend systems. Contributed to system architecture improvements, enhanced data synchronization performance, and supported integrations with external health systems including Impilo EHR and DHIS2. Worked closely with multidisciplinary teams to align technical solutions with clinical workflows.",
-  },
-
-  {
-    year: "Apr 2025 - Aug 2025",
+    year: "Apr 2025 - Sep 2025",
     title: "Full Stack Developer",
     company: "Kays Consulting Services",
+    category: "Professional experience",
     description:
-      "Developed cross-platform web and mobile solutions across multiple domains. Built scalable backend systems, modern frontend interfaces, and integrated third-party APIs. Led development of core business platforms and introduced automation to streamline internal workflows and improve operational efficiency.",
+      "Delivered cross-platform applications backed by secure APIs and relational data, integrated third-party services and automated operational workflows.",
   },
-
   {
-    year: "Nov 2024 - May 2025",
+    year: "Nov 2024 - Apr 2025",
     title: "Lead Software Engineer",
     company: "Abstrak Agency",
+    category: "Professional experience",
     description:
-      "Led full-stack development across multiple client projects. Mentored junior developers, enforced code quality standards, and implemented scalable architecture patterns using modern technologies such as Next.js and Flutter. Improved development workflows and delivery consistency across teams.",
+      "Led full-stack client delivery, mentored junior developers and introduced repeatable architecture and code-quality practices across Next.js and Flutter projects.",
   },
-
   {
     year: "Dec 2023 - Dec 2024",
     title: "Lead Mobile App Developer",
     company: "KaribuTech AI",
+    category: "Professional experience",
     description:
-      "Led the design and development of AI-powered mobile applications using Flutter. Integrated real-time databases, authentication systems, and push notifications. Focused on performance optimization, rapid prototyping, and delivering intuitive, user-centered mobile experiences.",
+      "Led Flutter product delivery across mobile interfaces, authentication, real-time data and notification workflows, with an emphasis on performance and rapid validation.",
   },
-
+  {
+    year: "Current",
+    title: "Technical Lead",
+    company: "Daredzidzo",
+    type: "Product leadership",
+    category: "Consulting & technical leadership",
+    description:
+      "Shapes an offline-first desktop learning product for interactive classroom boards, local learning content, quizzes and examination preparation in low-connectivity schools.",
+  },
   {
     year: "Aug 2022 - Present",
-    title: "Software Engineer",
+    title: "Founder & Software Consultant",
     company: "Kingsman Software Services",
+    type: "Venture",
+    category: "Ventures",
     description:
-      "Founded and contributed to software development projects across multiple domains, building strong foundations in mobile and backend technologies. Delivered client solutions, shaped early product architecture, and continuously expanded expertise across the full technology stack.",
+      "Full-time engineering from Aug 2022–Dec 2023; continuing consultancy and business leadership from Jan 2024–Present across mobile, web and backend client work.",
+  },
+  {
+    year: "In development",
+    title: "Founder & Software Engineer",
+    company: "Fundani Edu Technologies",
+    type: "Venture",
+    category: "Ventures",
+    description:
+      "Developing a multi-tenant school operating-system direction spanning identity, admissions and role-specific school portals, with tenant isolation and low-connectivity environments as core constraints.",
   },
 ];
 
@@ -691,10 +700,10 @@ export const blogPostsData: BlogPost[] = [
 ];
 
 export const budgetOptions = [
-  { value: "", label: "Select project budget..." },
-  { value: "100-500", label: "$100 - $500" },
-  { value: "500-2000", label: "$500 - $2,000" },
+  { value: "", label: "Select an investment range (optional)..." },
   { value: "2000-5000", label: "$2,000 - $5,000" },
   { value: "5000-10000", label: "$5,000 - $10,000" },
-  { value: "10k+", label: "$10,000+" },
+  { value: "10000-25000", label: "$10,000 - $25,000" },
+  { value: "25000+", label: "$25,000+" },
+  { value: "discuss", label: "Let’s discuss scope first" },
 ];

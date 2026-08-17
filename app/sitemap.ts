@@ -1,13 +1,21 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
 import { getBlogs } from "@/lib/api/blogs";
+import { caseStudies } from "@/lib/portfolio";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticRoutes = ["", "/blogs"].map((path) => ({
+  const staticRoutes = ["", "/work", "/about", "/blogs"].map((path) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: new Date().toISOString(),
     changeFrequency: "monthly" as const,
     priority: path === "" ? 1 : 0.7,
+  }));
+
+  const workRoutes = caseStudies.map((study) => ({
+    url: `${siteConfig.url}/work/${study.slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: "monthly" as const,
+    priority: study.featured ? 0.8 : 0.7,
   }));
 
   const posts = [];
@@ -28,5 +36,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  return [...staticRoutes, ...workRoutes, ...blogRoutes];
 }

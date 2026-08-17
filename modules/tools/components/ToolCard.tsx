@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import type { ToolCardProps } from "../types";
 import {
@@ -36,11 +37,12 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool, index }) => {
       {/* Icon */}
       <div className="w-12 h-12 rounded-lg bg-background flex items-center justify-center flex-shrink-0">
         {isCdnIcon ? (
-          <img
+          <Image
             src={tool.icon}
             alt={`${tool.name} icon`}
+            width={24}
+            height={24}
             className="h-6 w-6"
-            loading="lazy"
           />
         ) : (
           IconComponent && <IconComponent size={24} className="text-card-foreground" />
