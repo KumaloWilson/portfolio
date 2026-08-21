@@ -174,7 +174,7 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
   }, [setActiveSection]);
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-background">
+    <main id="main-content" className="relative min-h-screen overflow-x-hidden bg-background">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-primary/25 blur-[120px]" />
         <div className="absolute right-0 top-1/3 h-96 w-96 rounded-full bg-accent/20 blur-[150px]" />
@@ -377,7 +377,7 @@ const BlogDetailContent = ({ post }: BlogDetailClientProps) => {
                   Ready to build something bold?
                 </h3>
                 <p className="mt-4 text-base text-muted-foreground md:text-lg max-w-xl">
-                  Let's talk about your next product, platform, or experience. I'm currently available for new projects.
+                  Let’s talk about your next product, platform, or engineering challenge.
                 </p>
                 <div className="mt-8">
                   <Link

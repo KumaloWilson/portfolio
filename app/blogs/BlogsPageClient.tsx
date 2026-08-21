@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import type { BlogPost } from "@/modules/shared/types";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { getBlogs } from "@/lib/api/blogs";
 import { BlogListCard } from "./BlogListCard";
 import { fadeInUp, staggerContainer } from "@/modules/shared/hooks/useAnimations";
@@ -23,7 +24,6 @@ const BlogsPageContent = ({ posts }: { posts: BlogPost[] }) => {
     if (posts.length > 0) return;
     let isMounted = true;
 
-    setIsLoading(true);
     getBlogs({ limit: 50 })
       .then((data) => {
         if (isMounted) setClientPosts(data);
@@ -41,7 +41,7 @@ const BlogsPageContent = ({ posts }: { posts: BlogPost[] }) => {
   }, [posts.length]);
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-background">
+    <main id="main-content" className="relative min-h-screen overflow-hidden bg-background">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-primary/25 blur-[120px]" />
         <div className="absolute right-0 top-1/3 h-96 w-96 rounded-full bg-accent/20 blur-[150px]" />
@@ -105,10 +105,12 @@ const BlogsPageContent = ({ posts }: { posts: BlogPost[] }) => {
             >
               <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
                 <div className="relative min-h-[280px] lg:min-h-[320px]">
-                  <img
+                  <Image
                     src={featuredPost.headlineImage || featuredPost.image || "/placeholder.svg"}
                     alt={featuredPost.title}
-                    className="h-full w-full object-cover"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 55vw"
+                    className="object-cover"
                   />
                 </div>
                 <div className="flex flex-col justify-between gap-6 px-8 pb-8 pt-6">

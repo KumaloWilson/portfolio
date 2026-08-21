@@ -52,7 +52,9 @@ export function useContactForm() {
       errors.email = "Enter a valid email address.";
     }
 
-    if (formState.service && formState.service.length > 120) {
+    if (!formState.service) {
+      errors.service = "Choose what you would like to discuss.";
+    } else if (formState.service.length > 120) {
       errors.service = "Service must be 120 characters or less.";
     }
 

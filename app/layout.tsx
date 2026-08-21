@@ -1,14 +1,13 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Geist, Space_Grotesk } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import { profileData } from "@/modules/shared/services/data.service";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const _geist = Geist({ subsets: ["latin"] });
-const _spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -104,6 +103,23 @@ export default function RootLayout({
     jobTitle: profileData.title,
     description: profileData.description,
     sameAs: profileData.socialLinks.map((link) => link.url),
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Bulawayo",
+      addressCountry: "ZW",
+    },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Chinhoyi University of Technology",
+    },
+    knowsAbout: [
+      "Digital health",
+      "Offline-first software",
+      "Health-data interoperability",
+      "Mobile engineering",
+      "Backend systems",
+      "Platform engineering",
+    ],
   };
 
   const websiteSchema = {
@@ -120,9 +136,10 @@ export default function RootLayout({
           {`(function(){if(typeof performance==="undefined"||typeof performance.measure!=="function"){return;}var original=performance.measure.bind(performance);performance.measure=function(name,startOrOptions,endMark){try{if(typeof startOrOptions==="number"&&startOrOptions<0){return;}if(startOrOptions&&typeof startOrOptions==="object"){var start=startOrOptions.start??startOrOptions.startTime;var end=startOrOptions.end??startOrOptions.endTime;var duration=startOrOptions.duration;if((typeof start==="number"&&start<0)||(typeof end==="number"&&end<0)||(typeof duration==="number"&&duration<0)){return;}}return original(name,startOrOptions,endMark);}catch(_err){return;}};})();`}
         </Script>
       </head>
-      <body className={`font-sans antialiased`}>
+      <body className={`${spaceGrotesk.className} antialiased`}>
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         {children}
-        <Analytics />
+        {process.env.VERCEL ? <Analytics /> : null}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

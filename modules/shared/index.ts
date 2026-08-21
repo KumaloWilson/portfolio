@@ -1,6 +1,7 @@
 // Components
 export { ProfileCard } from "./components/ProfileCard";
 export { Navigation } from "./components/Navigation";
+export { PageChrome } from "./components/PageChrome";
 export * from "./components/Icons";
 
 // Services

@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { useNavigationStore } from "../state/navigation.state";
@@ -22,10 +21,10 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { id: "home", icon: HomeIcon, label: "Home" },
-  { id: "projects", icon: ProjectsIcon, label: "Projects" },
+  { id: "projects", icon: ProjectsIcon, label: "Work" },
   { id: "experience", icon: ExperienceIcon, label: "Experience" },
-  { id: "tools", icon: ToolsIcon, label: "Tools" },
-  { id: "blogs", icon: BlogsIcon, label: "Blogs" },
+  { id: "tools", icon: ToolsIcon, label: "Capabilities" },
+  { id: "blogs", icon: BlogsIcon, label: "Writing" },
   { id: "contact", icon: ContactIcon, label: "Contact" },
 ];
 
@@ -39,6 +38,7 @@ export const Navigation: React.FC = () => {
       router.push("/blogs");
       return;
     }
+
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -53,6 +53,7 @@ export const Navigation: React.FC = () => {
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
+      aria-label="Primary navigation"
     >
       <div className="flex items-center gap-1 md:gap-2 bg-secondary/80 backdrop-blur-md rounded-full px-3 py-2 md:px-4 md:py-3 border border-border shadow-2xl">
         {navItems.map((item) => {
@@ -60,15 +61,13 @@ export const Navigation: React.FC = () => {
           return (
             <motion.button
               key={item.id}
+              type="button"
               onClick={() => handleNavClick(item.id)}
-              className={`relative p-2 md:p-2.5 rounded-full transition-colors ${
-                isActive
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+              className={`relative p-2 md:p-2.5 rounded-full transition-colors ${isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               aria-label={item.label}
+              aria-current={isActive ? "page" : undefined}
             >
               {isActive && (
                 <motion.div
